@@ -1,0 +1,536 @@
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  background: #020617;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   BACKGROUND GLOW
+=========================== */
+
+.hero-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.blur-1 {
+  width: 320px;
+  height: 320px;
+  background: rgba(37, 99, 235, 0.35);
+
+  top: -120px;
+  left: -120px;
+}
+
+.blur-2 {
+  width: 380px;
+  height: 380px;
+  background: rgba(6, 182, 212, 0.25);
+
+  bottom: -150px;
+  right: -120px;
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 50px;
+
+  color: #38bdf8;
+
+  background: rgba(56, 189, 248, .08);
+
+  border: 1px solid rgba(56,189,248,.2);
+
+  margin-bottom: 25px;
+
+  font-size: .95rem;
+
+  font-weight: 500;
+}
+
+.hero-content h1 {
+  color: white;
+
+  font-size: 4rem;
+
+  line-height: 1.2;
+
+  margin-bottom: 18px;
+}
+
+.hero-content h1 span {
+  color: #38bdf8;
+}
+
+.hero-content h2 {
+  color: #cbd5e1;
+
+  font-size: 2rem;
+
+  min-height: 60px;
+
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  color: #94a3b8;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  max-width: 560px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+
+  margin-top: 40px;
+}
+
+.primary-btn,
+.secondary-btn {
+
+  padding: 14px 30px;
+
+  border-radius: 10px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .35s;
+}
+
+.primary-btn {
+
+  border: none;
+
+  color: white;
+
+  background: linear-gradient(
+      135deg,
+      #2563eb,
+      #06b6d4
+  );
+}
+
+.primary-btn:hover{
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 30px rgba(37,99,235,.35);
+
+}
+
+.secondary-btn{
+
+  background: transparent;
+
+  color: white;
+
+  border:2px solid #38bdf8;
+}
+
+.secondary-btn:hover{
+
+  background:#38bdf8;
+
+  color:#020617;
+
+}
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+
+.hero-socials{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:40px;
+
+}
+
+.hero-socials a{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    color:white;
+
+    font-size:1.3rem;
+
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
+
+}
+
+.hero-socials a:hover{
+
+    background:#38bdf8;
+
+    color:#020617;
+
+    transform:translateY(-4px);
+
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.image-box{
+
+    position:relative;
+
+    width:420px;
+    height:420px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.image-box img{
+
+    width:90%;
+
+    object-fit:contain;
+
+}
+/* ===========================
+   FLOATING TECH ICONS
+=========================== */
+
+.tech {
+  position: absolute;
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 2rem;
+  color: #38bdf8;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.react {
+  top: -25px;
+  left: -25px;
+}
+
+.node {
+  top: 40px;
+  right: -30px;
+  color: #22c55e;
+  animation-delay: .5s;
+}
+
+.mongo {
+  bottom: 30px;
+  left: -35px;
+  color: #16a34a;
+  animation-delay: 1s;
+}
+
+.express {
+  bottom: -25px;
+  right: 30px;
+  color: white;
+  animation-delay: 1.5s;
+}
+
+/* ===========================
+   FLOATING IMAGE
+=========================== */
+
+.image-box img {
+  animation: imageFloat 5s ease-in-out infinite;
+}
+
+/* ===========================
+   GRID BACKGROUND
+=========================== */
+
+.hero::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+
+  linear-gradient(
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+  ),
+
+  linear-gradient(
+      90deg,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+  );
+
+  background-size: 45px 45px;
+
+  opacity: .25;
+
+  z-index: 0;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes imageFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:992px){
+
+  .hero{
+    padding:120px 0 80px;
+  }
+
+  .hero-container{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+    gap:60px;
+
+  }
+
+  .hero-content p{
+
+    margin:auto;
+
+  }
+
+  .hero-buttons{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+  }
+
+  .hero-socials{
+
+    justify-content:center;
+
+  }
+
+  .image-box{
+
+    width:330px;
+    height:330px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hero-content h1{
+
+    font-size:3rem;
+
+  }
+
+  .hero-content h2{
+
+    font-size:1.6rem;
+
+    min-height:45px;
+
+  }
+
+  .hero-content p{
+
+    font-size:1rem;
+
+  }
+
+  .image-box{
+
+    width:280px;
+    height:280px;
+
+  }
+
+  .tech{
+
+    width:55px;
+    height:55px;
+
+    font-size:1.6rem;
+
+  }
+
+}
+
+@media (max-width:480px){
+
+  .hero-content h1{
+
+    font-size:2.4rem;
+
+  }
+
+  .hero-buttons{
+
+    flex-direction:column;
+
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    width:100%;
+
+  }
+
+  .image-box{
+
+    width:240px;
+    height:240px;
+
+  }
+
+  .tech{
+
+    width:48px;
+    height:48px;
+
+    font-size:1.3rem;
+
+  }
+
+}

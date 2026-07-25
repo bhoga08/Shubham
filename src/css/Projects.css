@@ -1,0 +1,163 @@
+.projects-page {
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 120px auto;
+
+}
+
+.projects-header{
+
+    text-align:center;
+
+}
+
+.projects-badge{
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    background:rgba(56,189,248,.08);
+
+    color:#38bdf8;
+
+    border:1px solid rgba(56,189,248,.2);
+
+    margin-bottom:20px;
+
+}
+
+.projects-header h1{
+
+    color:white;
+
+    font-size:3rem;
+
+}
+
+.projects-header span{
+
+    color:#38bdf8;
+
+}
+
+.projects-header p{
+
+    color:#94a3b8;
+
+    margin-top:20px;
+
+    font-size:1.05rem;
+
+}
+
+/* Top */
+
+.projects-top{
+
+    margin:60px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.projects-top input{
+
+    width:320px;
+
+    padding:15px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+.filter-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.filter-buttons button{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    background:#1e293b;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.filter-buttons button:hover,
+.filter-buttons .active{
+
+    background:#2563eb;
+
+}
+
+/* Grid */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .projects-header h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .projects-top{
+
+        justify-content:center;
+
+    }
+
+    .projects-top input{
+
+        width:100%;
+
+    }
+
+}

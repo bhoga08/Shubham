@@ -1,0 +1,151 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    backdrop-filter:blur(14px);
+    background:rgba(15,23,42,.85);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+    height:75px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-menu{
+    display:flex;
+    gap:35px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+    transition:.3s;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after{
+    width:100%;
+}
+
+.nav-menu a.active{
+    color:#38bdf8;
+}
+
+.resume-btn,
+.resume-mobile{
+
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+
+    color:#fff;
+    text-decoration:none;
+
+    padding:10px 22px;
+    border-radius:8px;
+
+    transition:.3s;
+}
+
+.resume-btn:hover,
+.resume-mobile:hover{
+    transform:translateY(-2px);
+}
+
+.resume-mobile{
+    display:none;
+}
+
+.menu-icon{
+    display:none;
+    color:white;
+    font-size:1.7rem;
+    cursor:pointer;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .resume-btn{
+        display:none;
+    }
+
+    .menu-icon{
+        display:block;
+    }
+
+    .nav-menu{
+
+        position:absolute;
+        top:75px;
+        left:-100%;
+
+        width:100%;
+        background:#0f172a;
+
+        flex-direction:column;
+        align-items:center;
+
+        gap:28px;
+
+        padding:35px 0;
+
+        transition:.4s;
+    }
+
+    .nav-menu.active{
+        left:0;
+    }
+
+    .resume-mobile{
+        display:block;
+    }
+}

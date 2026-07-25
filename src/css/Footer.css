@@ -1,0 +1,19 @@
+.footer{
+    padding:40px 0;
+    text-align:center;
+    background:#111827;
+    color:#fff;
+}
+
+.footer h3{
+    margin-bottom:10px;
+}
+
+.footer p{
+    margin:6px 0;
+}
+
+.copyright{
+    margin-top:20px;
+    opacity:.7;
+}
