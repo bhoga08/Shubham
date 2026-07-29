@@ -31,6 +31,29 @@ const projects = [
 
     live: "https://portfolio.vercel.app",
   },
+
+  {
+  id: 3,
+  title: "Learnix - Study Tracker",
+
+  description:
+    "A full-stack MERN study tracker application that helps students manage study sessions, track goals, monitor progress, and improve productivity through an intuitive dashboard.",
+
+  image: learnix,
+
+  tech: [
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "CSS",
+  ],
+
+  github: "https://github.com/bhoga08/<learnix-repository>",
+
+  live: "https://vercel-frontend-nine-ruddy.vercel.app",
+},
 ];
 
 export default projects;
