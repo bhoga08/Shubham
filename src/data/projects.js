@@ -1,5 +1,6 @@
 import companyDNA from "../assets/images/companyDNA.png";
 import portfolio from "../assets/images/portfolio.png";
+import learnix from "../assets/images/Learnix.png"
 
 const projects = [
   {
@@ -17,23 +18,10 @@ const projects = [
     live: "https://company-dna.vercel.app/",
   },
 
-  {
-    id: 2,
-    title: "Developer Portfolio",
-    description:
-      "A modern responsive portfolio built with React and custom animations.",
-
-    image: portfolio,
-
-    tech: ["React", "CSS"],
-
-    github: "https://github.com/yourusername/portfolio",
-
-    live: "https://portfolio.vercel.app",
-  },
+  
 
   {
-  id: 3,
+  id: 2,
   title: "Learnix - Study Tracker",
 
   description:
@@ -54,6 +42,22 @@ const projects = [
 
   live: "https://vercel-frontend-nine-ruddy.vercel.app",
 },
+
+
+{
+    id: 3,
+    title: "Developer Portfolio",
+    description:
+      "A modern responsive portfolio built with React and custom animations.",
+
+    image: portfolio,
+
+    tech: ["React", "CSS"],
+
+    github: "https://github.com/yourusername/portfolio",
+
+    live: "https://portfolio.vercel.app",
+  },
 ];
 
 export default projects;
