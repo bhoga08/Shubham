@@ -8,6 +8,7 @@ import {
 import { SiMongodb, SiExpress } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import heroImage from "../assets/hero.png";
 
@@ -58,9 +59,11 @@ const Hero = () => {
 
           <div className="hero-buttons">
 
-            <button className="primary-btn">
-              View Projects
-            </button>
+            <Link to="/projects">
+  <button className="primary-btn">
+    View Projects
+  </button>
+</Link>
 
             <button className="secondary-btn">
               Download Resume
