@@ -1,0 +1,155 @@
+/* ==========================
+   SKILLS SECTION
+========================== */
+
+.skills {
+  width: 100%;
+  padding: 120px 0;
+  background: #020617;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.skills-header .section-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.skills-header h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.skills-header h2 span {
+  color: #38bdf8;
+}
+
+.skills-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.skill-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(20px);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  transition: .35s;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px rgba(56,189,248,.12);
+}
+
+.skill-card h3 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+/* ==========================
+   ITEMS
+========================== */
+
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 12px 15px;
+
+  border-radius: 12px;
+
+  transition: .3s;
+}
+
+.skill-item:hover {
+  background: rgba(255,255,255,.06);
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  color: #38bdf8;
+}
+
+.skill-item span {
+  color: white;
+  font-weight: 500;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+  .skills{
+    padding:80px 0;
+  }
+
+  .skills-header h2{
+    font-size:2.3rem;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .skills-header h2{
+    font-size:2rem;
+  }
+
+  .skill-card{
+    padding:22px;
+  }
+
+}
