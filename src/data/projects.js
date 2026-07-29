@@ -14,7 +14,7 @@ const projects = [
 
     github: "https://github.com/bhoga08/companydna",
 
-    live: "https://companydna.vercel.app",
+    live: "https://company-dna.vercel.app/",
   },
 
   {
