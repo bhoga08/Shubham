@@ -1,7 +1,7 @@
 ```css
-/* ================================
+/* ========================================
    GITHUB STATS
-================================ */
+======================================== */
 
 .github-stats {
   width: 100%;
@@ -14,9 +14,9 @@
 }
 
 
-/* ================================
-   SECTION HEADING
-================================ */
+/* ========================================
+   HEADING
+======================================== */
 
 .github-heading {
   text-align: center;
@@ -31,7 +31,7 @@
   font-weight: 600;
   letter-spacing: 2.5px;
 
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .github-heading h2 {
@@ -48,23 +48,26 @@
 }
 
 .github-heading p {
-  max-width: 600px;
+  max-width: 620px;
+
   margin: 14px auto 0;
 
   font-size: 15px;
   line-height: 1.7;
 
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 
-/* ================================
+/* ========================================
    STATS CARDS
-================================ */
+======================================== */
 
 .github-cards {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 18px;
 
   margin-bottom: 28px;
@@ -73,6 +76,7 @@
 .github-card {
   display: flex;
   align-items: center;
+
   gap: 17px;
 
   padding: 23px;
@@ -80,6 +84,7 @@
   border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.025);
+
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(10px);
@@ -123,9 +128,9 @@
 }
 
 
-/* ================================
-   CONTRIBUTION ACTIVITY
-================================ */
+/* ========================================
+   ACTIVITY CARD
+======================================== */
 
 .github-activity {
   width: 100%;
@@ -137,8 +142,6 @@
   background: #0d1117;
 
   border: 1px solid #30363d;
-
-  backdrop-filter: blur(12px);
 
   overflow: hidden;
 
@@ -154,14 +157,16 @@
 }
 
 
-/* ================================
+/* ========================================
    ACTIVITY HEADER
-================================ */
+======================================== */
 
 .activity-header {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
+
+  justify-content: space-between;
 
   margin-bottom: 24px;
 }
@@ -199,14 +204,14 @@
 }
 
 
-/* ================================
-   CONTRIBUTION GRAPH
-================================ */
+/* ========================================
+   CONTRIBUTION WRAPPER
+======================================== */
 
 .contribution-wrapper {
   width: 100%;
 
-  padding: 18px 16px 12px;
+  padding: 18px 12px 14px;
 
   overflow-x: auto;
 
@@ -215,7 +220,10 @@
   border-radius: 12px;
 
   scrollbar-width: thin;
-  scrollbar-color: #30363d transparent;
+
+  scrollbar-color:
+    #30363d
+    transparent;
 }
 
 .contribution-wrapper::-webkit-scrollbar {
@@ -237,39 +245,136 @@
 }
 
 
-/* Graph image */
+/* ========================================
+   CONTRIBUTION GRID
+======================================== */
 
-.contribution-wrapper img {
-  display: block;
+.contribution-grid {
+  display: grid;
 
-  width: 100%;
-  min-width: 720px;
+  grid-template-rows: repeat(7, 1fr);
 
-  height: 145px;
+  grid-auto-flow: column;
 
-  object-fit: contain;
+  grid-auto-columns: 13px;
 
-  border-radius: 6px;
+  gap: 5px;
 
-  opacity: 0.95;
+  width: max-content;
+
+  min-width: 100%;
+}
+
+
+/* ========================================
+   CONTRIBUTION CELLS
+======================================== */
+
+.contribution-cell {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 3px;
 
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.contribution-wrapper img:hover {
-  opacity: 1;
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 
-/* ================================
+/* Empty */
+
+.contribution-cell.level-0 {
+  background: #161b22;
+
+  border: 1px solid #21262d;
+}
+
+
+/* Low */
+
+.contribution-cell.level-1 {
+  background: #0e4429;
+}
+
+
+/* Medium */
+
+.contribution-cell.level-2 {
+  background: #006d32;
+}
+
+
+/* High */
+
+.contribution-cell.level-3 {
+  background: #26a641;
+}
+
+
+/* Hover */
+
+.contribution-cell:hover {
+  box-shadow:
+    0 0 8px rgba(46, 160, 67, 0.45);
+}
+
+
+/* ========================================
+   CONTRIBUTION LEGEND
+======================================== */
+
+.contribution-legend {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  margin-top: 8px;
+
+  font-size: 11px;
+
+  color: #8b949e;
+}
+
+.legend-cell {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 3px;
+}
+
+.legend-cell.level-0 {
+  background: #161b22;
+
+  border: 1px solid #21262d;
+}
+
+.legend-cell.level-1 {
+  background: #0e4429;
+}
+
+.legend-cell.level-2 {
+  background: #006d32;
+}
+
+.legend-cell.level-3 {
+  background: #26a641;
+}
+
+
+/* ========================================
    GITHUB BUTTON
-================================ */
+======================================== */
 
 .github-profile-btn {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   width: fit-content;
@@ -287,6 +392,7 @@
   text-decoration: none;
 
   font-size: 14px;
+
   font-weight: 500;
 
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -314,9 +420,9 @@
 }
 
 
-/* ================================
+/* ========================================
    LOADING
-================================ */
+======================================== */
 
 .github-loading {
   text-align: center;
@@ -329,9 +435,9 @@
 }
 
 
-/* ================================
+/* ========================================
    TABLET
-================================ */
+======================================== */
 
 @media (max-width: 900px) {
 
@@ -346,13 +452,12 @@
   .github-card h3 {
     font-size: 24px;
   }
-
 }
 
 
-/* ================================
+/* ========================================
    MOBILE
-================================ */
+======================================== */
 
 @media (max-width: 700px) {
 
@@ -372,7 +477,6 @@
     font-size: 14px;
   }
 
-
   .github-cards {
     grid-template-columns: 1fr;
 
@@ -385,13 +489,11 @@
     padding: 19px;
   }
 
-
   .github-activity {
     padding: 20px;
 
     border-radius: 16px;
   }
-
 
   .activity-header h3 {
     font-size: 18px;
@@ -406,32 +508,39 @@
     height: 24px;
   }
 
-
   .contribution-wrapper {
     margin: 0 -2px;
 
-    padding: 15px 12px 10px;
+    padding: 15px 10px 10px;
   }
 
-  .contribution-wrapper img {
-    min-width: 680px;
+  .contribution-grid {
+    grid-auto-columns: 11px;
 
-    height: 125px;
+    gap: 4px;
   }
 
+  .contribution-cell {
+    width: 11px;
+    height: 11px;
+  }
+
+  .legend-cell {
+    width: 10px;
+    height: 10px;
+  }
 
   .github-profile-btn {
     width: 100%;
 
     padding: 13px 18px;
   }
-
 }
 
 
-/* ================================
+/* ========================================
    SMALL MOBILE
-================================ */
+======================================== */
 
 @media (max-width: 400px) {
 
@@ -455,11 +564,9 @@
     padding: 17px;
   }
 
-  .contribution-wrapper img {
-    min-width: 620px;
-
-    height: 115px;
+  .contribution-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
   }
-
 }
 ```

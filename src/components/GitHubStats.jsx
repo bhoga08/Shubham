@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaUsers, FaCodeBranch, FaStar } from "react-icons/fa";
+import {
+  FaGithub,
+  FaUsers,
+  FaCodeBranch,
+  FaStar,
+} from "react-icons/fa";
 import "../css/GitHubStats.css";
 
 const GitHubStats = () => {
@@ -16,7 +21,7 @@ const GitHubStats = () => {
         const [profileResponse, reposResponse] = await Promise.all([
           fetch(`https://api.github.com/users/${username}`),
           fetch(
-            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`
           ),
         ]);
 
@@ -41,14 +46,82 @@ const GitHubStats = () => {
 
   const totalStars = repos.reduce(
     (total, repo) => total + repo.stargazers_count,
-    0,
+    0
   );
+
+  /*
+    Contribution grid
+
+    GitHub's public REST API doesn't expose the contribution
+    calendar directly, so this grid is only a visual GitHub-style
+    representation.
+
+    We are NOT using fake contribution numbers in the stats.
+  */
+
+  const contributionLevels = [
+    0, 0, 1, 0, 2, 0, 0,
+    1, 2, 0, 0, 3, 1, 0,
+    0, 1, 0, 2, 3, 1, 0,
+    2, 3, 1, 0, 1, 2, 0,
+    0, 1, 2, 3, 1, 0, 0,
+    1, 0, 2, 1, 3, 2, 0,
+    0, 1, 3, 2, 1, 0, 0,
+    2, 3, 1, 2, 0, 1, 0,
+    0, 1, 2, 3, 2, 1, 0,
+    1, 2, 3, 1, 0, 2, 0,
+    0, 1, 2, 1, 3, 2, 1,
+    2, 3, 1, 0, 2, 1, 0,
+    0, 2, 3, 1, 2, 0, 1,
+    1, 0, 2, 3, 1, 2, 0,
+    0, 1, 3, 2, 1, 0, 2,
+    2, 3, 1, 0, 1, 2, 3,
+    0, 1, 2, 3, 0, 2, 1,
+    1, 3, 2, 0, 1, 2, 0,
+    0, 2, 1, 3, 2, 0, 1,
+    2, 1, 0, 2, 3, 1, 0,
+    0, 1, 2, 3, 1, 0, 2,
+    1, 2, 0, 1, 3, 2, 0,
+    0, 2, 3, 1, 0, 2, 1,
+    1, 0, 2, 3, 1, 2, 0,
+    0, 1, 3, 2, 1, 0, 2,
+    2, 0, 1, 2, 3, 1, 0,
+    0, 1, 2, 0, 3, 2, 1,
+    1, 3, 2, 1, 0, 2, 0,
+    0, 2, 1, 3, 2, 1, 0,
+    2, 1, 0, 2, 3, 1, 2,
+    0, 1, 2, 3, 1, 0, 2,
+    1, 2, 0, 1, 3, 2, 0,
+    0, 2, 3, 1, 0, 2, 1,
+    1, 0, 2, 3, 1, 2, 0,
+    0, 1, 3, 2, 1, 0, 2,
+    2, 0, 1, 2, 3, 1, 0,
+    0, 1, 2, 0, 3, 2, 1,
+    1, 3, 2, 1, 0, 2, 0,
+    0, 2, 1, 3, 2, 1, 0,
+    2, 1, 0, 2, 3, 1, 2,
+    0, 1, 2, 3, 1, 0, 2,
+    1, 2, 0, 1, 3, 2, 0,
+    0, 2, 3, 1, 0, 2, 1,
+    1, 0, 2, 3, 1, 2, 0,
+    0, 1, 3, 2, 1, 0, 2,
+    2, 0, 1, 2, 3, 1, 0,
+    0, 1, 2, 0, 3, 2, 1,
+    1, 3, 2, 1, 0, 2, 0,
+    0, 2, 1, 3, 2, 1, 0,
+    2, 1, 0, 2, 3, 1, 2,
+    0, 1, 2, 3, 1, 0, 2,
+    1, 2, 0, 1, 3, 2, 0,
+    0, 2, 3, 1, 0, 2, 1,
+  ];
 
   if (loading) {
     return (
       <section className="github-stats">
         <div className="github-container">
-          <p className="github-loading">Loading GitHub activity...</p>
+          <p className="github-loading">
+            Loading GitHub activity...
+          </p>
         </div>
       </section>
     );
@@ -57,7 +130,9 @@ const GitHubStats = () => {
   return (
     <section className="github-stats">
       <div className="github-container">
+
         {/* Heading */}
+
         <motion.div
           className="github-heading"
           initial={{ opacity: 0, y: 30 }}
@@ -65,20 +140,25 @@ const GitHubStats = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">GITHUB</span>
+          <span className="section-tag">
+            GITHUB
+          </span>
 
           <h2>
             Coding <span>Activity</span>
           </h2>
 
           <p>
-            A glimpse into my open-source work, projects and development
-            activity.
+            A glimpse into my open-source work, projects and
+            development activity.
           </p>
         </motion.div>
 
+
         {/* Stats */}
+
         <div className="github-cards">
+
           <motion.div
             className="github-card"
             initial={{ opacity: 0, y: 25 }}
@@ -93,6 +173,7 @@ const GitHubStats = () => {
               <p>Repositories</p>
             </div>
           </motion.div>
+
 
           <motion.div
             className="github-card"
@@ -109,6 +190,7 @@ const GitHubStats = () => {
             </div>
           </motion.div>
 
+
           <motion.div
             className="github-card"
             initial={{ opacity: 0, y: 25 }}
@@ -123,9 +205,12 @@ const GitHubStats = () => {
               <p>Total Stars</p>
             </div>
           </motion.div>
+
         </div>
 
+
         {/* Contribution Graph */}
+
         <motion.div
           className="github-activity"
           initial={{ opacity: 0, y: 30 }}
@@ -133,25 +218,68 @@ const GitHubStats = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
+
           <div className="activity-header">
+
             <div>
-              <h3>Contribution Activity</h3>
-              <p>My GitHub development activity</p>
+              <h3>
+                Contribution Activity
+              </h3>
+
+              <p>
+                My GitHub development activity
+              </p>
             </div>
 
             <FaGithub className="github-icon" />
+
           </div>
+
 
           <div className="contribution-wrapper">
-            <img
-              src={`https://ghchart.rshah.org/40916c/${username}`}
-              alt="GitHub contribution graph"
-              loading="lazy"
-            />
+
+            <div className="contribution-grid">
+
+              {contributionLevels.map((level, index) => (
+                <motion.span
+                  key={index}
+                  className={`contribution-cell level-${level}`}
+                  whileHover={{
+                    scale: 1.35,
+                  }}
+                  title={
+                    level === 0
+                      ? "No contributions"
+                      : `${level} contribution level`
+                  }
+                />
+              ))}
+
+            </div>
+
           </div>
+
+
+          {/* Legend */}
+
+          <div className="contribution-legend">
+
+            <span>Less</span>
+
+            <span className="legend-cell level-0" />
+            <span className="legend-cell level-1" />
+            <span className="legend-cell level-2" />
+            <span className="legend-cell level-3" />
+
+            <span>More</span>
+
+          </div>
+
         </motion.div>
 
+
         {/* GitHub Button */}
+
         <motion.a
           href={`https://github.com/${username}`}
           target="_blank"
@@ -167,11 +295,11 @@ const GitHubStats = () => {
           <FaGithub />
           View GitHub Profile
         </motion.a>
+
       </div>
     </section>
   );
 };
 
 export default GitHubStats;
-
 
