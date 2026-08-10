@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaUsers,
-  FaCodeBranch,
-  FaStar,
-} from "react-icons/fa";
+import { FaGithub, FaUsers, FaCodeBranch, FaStar } from "react-icons/fa";
 import "../css/GitHubStats.css";
 
 const GitHubStats = () => {
@@ -21,7 +16,7 @@ const GitHubStats = () => {
         const [profileResponse, reposResponse] = await Promise.all([
           fetch(`https://api.github.com/users/${username}`),
           fetch(
-            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`
+            `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
           ),
         ]);
 
@@ -46,7 +41,7 @@ const GitHubStats = () => {
 
   const totalStars = repos.reduce(
     (total, repo) => total + repo.stargazers_count,
-    0
+    0,
   );
 
   if (loading) {
@@ -62,7 +57,6 @@ const GitHubStats = () => {
   return (
     <section className="github-stats">
       <div className="github-container">
-
         {/* Heading */}
         <motion.div
           className="github-heading"
@@ -78,14 +72,13 @@ const GitHubStats = () => {
           </h2>
 
           <p>
-            A glimpse into my open-source work, projects and
-            development activity.
+            A glimpse into my open-source work, projects and development
+            activity.
           </p>
         </motion.div>
 
         {/* Stats */}
         <div className="github-cards">
-
           <motion.div
             className="github-card"
             initial={{ opacity: 0, y: 25 }}
@@ -130,7 +123,6 @@ const GitHubStats = () => {
               <p>Total Stars</p>
             </div>
           </motion.div>
-
         </div>
 
         {/* Contribution Graph */}
@@ -175,7 +167,6 @@ const GitHubStats = () => {
           <FaGithub />
           View GitHub Profile
         </motion.a>
-
       </div>
     </section>
   );
