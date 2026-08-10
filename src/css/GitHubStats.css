@@ -1,191 +1,456 @@
+```css
+/* ================================
+   GITHUB STATS
+================================ */
+
 .github-stats {
+  width: 100%;
   padding: 100px 20px;
 }
 
 .github-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-/* Heading */
+
+/* ================================
+   SECTION HEADING
+================================ */
 
 .github-heading {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
   margin-bottom: 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+
+  opacity: 0.6;
 }
 
 .github-heading h2 {
-  font-size: 42px;
   margin: 0;
+
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+
+  letter-spacing: -1px;
 }
 
 .github-heading h2 span {
-  color: #6c63ff;
+  color: #7c6cff;
 }
 
 .github-heading p {
   max-width: 600px;
-  margin: 15px auto 0;
-  opacity: 0.7;
+  margin: 14px auto 0;
+
+  font-size: 15px;
   line-height: 1.7;
+
+  opacity: 0.6;
 }
 
-/* Stats */
+
+/* ================================
+   STATS CARDS
+================================ */
 
 .github-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 35px;
+  gap: 18px;
+
+  margin-bottom: 28px;
 }
 
 .github-card {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 25px;
-  border: 1px solid rgba(128, 128, 128, 0.2);
+  gap: 17px;
+
+  padding: 23px;
+
   border-radius: 16px;
-  background: rgba(128, 128, 128, 0.05);
-  transition: 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .github-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(108, 99, 255, 0.5);
+
+  border-color: rgba(124, 108, 255, 0.4);
+
+  background: rgba(124, 108, 255, 0.04);
 }
 
 .github-card svg {
-  font-size: 28px;
-  color: #6c63ff;
+  flex-shrink: 0;
+
+  width: 27px;
+  height: 27px;
+
+  color: #7c6cff;
 }
 
 .github-card h3 {
-  font-size: 28px;
   margin: 0;
+
+  font-size: 27px;
+  font-weight: 700;
 }
 
 .github-card p {
   margin: 4px 0 0;
-  opacity: 0.65;
+
+  font-size: 13px;
+
+  opacity: 0.55;
 }
 
-/* Activity */
+
+/* ================================
+   CONTRIBUTION ACTIVITY
+================================ */
 
 .github-activity {
+  width: 100%;
+
   padding: 30px;
-  border: 1px solid rgba(128, 128, 128, 0.2);
+
   border-radius: 20px;
-  background: rgba(128, 128, 128, 0.04);
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
   overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.github-activity:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(124, 108, 255, 0.3);
+}
+
+
+/* ================================
+   ACTIVITY HEADER
+================================ */
 
 .activity-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+
+  margin-bottom: 24px;
 }
 
 .activity-header h3 {
   margin: 0;
-  font-size: 22px;
+
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .activity-header p {
-  margin: 7px 0 0;
-  opacity: 0.6;
+  margin: 6px 0 0;
+
+  font-size: 13px;
+
+  opacity: 0.5;
 }
 
 .github-icon {
-  font-size: 32px;
-}
+  width: 28px;
+  height: 28px;
 
-/* Contribution Graph */
+  opacity: 0.7;
 
-.contribution-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.contribution-wrapper img {
-  display: block;
-  width: 100%;
-  min-width: 700px;
-  height: auto;
-}
-
-/* Button */
-
-.github-profile-btn {
-  width: fit-content;
-  margin: 35px auto 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid rgba(128, 128, 128, 0.3);
   transition: 0.3s ease;
 }
 
-.github-profile-btn:hover {
-  background: #6c63ff;
-  color: white;
+.github-activity:hover .github-icon {
+  color: #7c6cff;
+  opacity: 1;
 }
 
-/* Loading */
+
+/* ================================
+   CONTRIBUTION GRAPH
+================================ */
+
+.contribution-wrapper {
+  width: 100%;
+
+  padding: 20px 0 8px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 108, 255, 0.5) transparent;
+}
+
+.contribution-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+.contribution-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contribution-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background: rgba(124, 108, 255, 0.45);
+}
+
+.contribution-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 108, 255, 0.7);
+}
+
+
+/* Graph image */
+
+.contribution-wrapper img {
+  display: block;
+
+  width: 100%;
+  min-width: 720px;
+
+  height: 145px;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  opacity: 0.9;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contribution-wrapper img:hover {
+  opacity: 1;
+}
+
+
+/* ================================
+   GITHUB BUTTON
+================================ */
+
+.github-profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  margin: 30px auto 0;
+
+  padding: 13px 22px;
+
+  gap: 10px;
+
+  border-radius: 10px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.github-profile-btn svg {
+  font-size: 18px;
+}
+
+.github-profile-btn:hover {
+  background: #7c6cff;
+
+  border-color: #7c6cff;
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   LOADING
+================================ */
 
 .github-loading {
   text-align: center;
-  padding: 80px 0;
-  opacity: 0.7;
+
+  padding: 80px 20px;
+
+  font-size: 14px;
+
+  opacity: 0.6;
 }
 
-/* Mobile */
 
-@media (max-width: 768px) {
-  .github-stats {
-    padding: 70px 16px;
-  }
+/* ================================
+   TABLET
+================================ */
 
-  .github-heading h2 {
-    font-size: 32px;
-  }
+@media (max-width: 900px) {
 
   .github-cards {
-    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .github-card {
     padding: 20px;
   }
 
-  .github-activity {
-    padding: 20px;
+  .github-card h3 {
+    font-size: 24px;
   }
 
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+  .github-stats {
+    padding: 75px 16px;
+  }
+
+  .github-heading {
+    margin-bottom: 35px;
+  }
+
+  .github-heading h2 {
+    font-size: 32px;
+  }
+
+  .github-heading p {
+    font-size: 14px;
+  }
+
+
+  .github-cards {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+  }
+
+  .github-card {
+    padding: 19px;
+  }
+
+
+  .github-activity {
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+
   .activity-header h3 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .activity-header p {
-    font-size: 13px;
+    font-size: 12px;
   }
+
+  .github-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .contribution-wrapper {
+    margin: 0 -2px;
+
+    padding-top: 15px;
+  }
+
+  .contribution-wrapper img {
+    min-width: 680px;
+
+    height: 125px;
+  }
+
 
   .github-profile-btn {
     width: 100%;
-    justify-content: center;
+
+    padding: 13px 18px;
   }
+
 }
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 400px) {
+
+  .github-stats {
+    padding: 65px 14px;
+  }
+
+  .github-heading h2 {
+    font-size: 29px;
+  }
+
+  .github-card {
+    padding: 17px;
+  }
+
+  .github-card h3 {
+    font-size: 23px;
+  }
+
+  .github-activity {
+    padding: 17px;
+  }
+
+  .contribution-wrapper img {
+    min-width: 620px;
+    height: 115px;
+  }
+
+}
+```
