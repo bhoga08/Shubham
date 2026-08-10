@@ -5,7 +5,7 @@ import About from "./About";
 import Skills from "../components/Skills";
 import FeaturedProjects from "../components/FeaturedProjects";
 import Timeline from "../components/Timeline";
-
+import GitHubStats from "../components/GitHubStats";
 
 const Home = () => {
   return (
@@ -35,7 +35,9 @@ const Home = () => {
         <Timeline />
       </section>
 
-     
+      <section className="github-section">
+        <GitHubStats />
+      </section>
     </motion.main>
   );
 };
