@@ -3,7 +3,7 @@ const timeline = [
     year: "2023",
     title: "Started Programming",
     description:
-      "Started learning C, C++ and Java while building programming fundamentals.",
+      "Started learning Python , Html and Css while building programming fundamentals.",
   },
   {
     year: "2024",
