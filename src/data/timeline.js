@@ -13,15 +13,22 @@ const timeline = [
   },
   {
     year: "2025",
+    title: "MERN Internship",
+    description:
+      "Working on real-world MERN applications and improving problem-solving skills.",
+  },
+  {
+    year: "2025",
     title: "MERN Stack Projects",
     description:
       "Built full-stack projects using MongoDB, Express.js, React.js and Node.js.",
   },
+   
   {
     year: "2026",
     title: "MERN Internship",
     description:
-      "Working on real-world MERN applications and improving problem-solving skills.",
+      "Working on real-world MERN applications and improving problem-solving skills and strong understanding of MERN stack.",
   },
 ];
 
