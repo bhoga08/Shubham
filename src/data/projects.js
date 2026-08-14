@@ -58,6 +58,22 @@ const projects = [
 
     live: "https://portfolio.vercel.app",
   },
+  {
+    id: 4,
+    title: "Snake Game",
+    description:
+      "AI-powered knowledge management platform for seamless employee handovers.",
+
+    // image: companyDNA,
+
+    tech: ["React"],
+
+    github: "https://github.com/bhoga08/Snake___Game",
+
+    live: "https://snake-game-git-main-shubham-bhogals-projects.vercel.app",
+  },
+
+  
 ];
 
 export default projects;
